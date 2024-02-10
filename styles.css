@@ -1,0 +1,52 @@
+/* Стили для вкладок и заголовка остаются без изменений */
+
+/* Стили для анимации атома */
+#atom-animation {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 20px auto;
+    border: 2px solid #333;
+    border-radius: 50%;
+    animation: atom-rotation 4s linear infinite;
+}
+
+.nucleus {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.electron {
+    width: 20px; /* Увеличенный размер */
+    height: 20px; /* Увеличенный размер */
+    background-color: #007bff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 90px); /* Расстояние до орбиты электрона */
+    animation: electron-orbit 2s linear infinite;
+}
+
+@keyframes atom-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes electron-orbit {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
